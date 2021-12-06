@@ -8,7 +8,8 @@ HTML
 CSS
   - We have to declare css variables inside some element like :root.
   - :root is very similar to the html element.
-  - CSS variables are declared like so: --variableName: value; .
+  - CSS variables are declared like so: --variableName: value; and to assign it as a 
+  value to a property, we use var(--variableName) as the value for that property.
   - filter property: a property that applies graphical effects (like blur, contrast)
   on an element.
 
