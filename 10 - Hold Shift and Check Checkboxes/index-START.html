@@ -96,6 +96,54 @@
   </div>
 
 <script>
+
+  const checkboxes = document.querySelectorAll("input[type='checkbox']");
+
+  let lastChecked;
+  
+  function handleCheck(e) {
+    let inBetween = false;
+
+    if (e.shiftKey && this.checked) {
+      checkboxes.forEach(checkbox => {
+        if (checkbox === this || checkbox === lastChecked) {
+          inBetween = !inBetween;
+        }
+
+        if (inBetween) {
+          checkbox.checked = true;
+        }
+      });
+    }
+    
+    lastChecked = this;
+  }
+  
+  checkboxes.forEach(checkbox => checkbox.addEventListener("click", handleCheck));
+  
+  
+  
+  
+  // if (e.shiftKey) {
+  //   let checkedIndex = null
+  //     , currentIndex = Array.from(checkboxes).findIndex(checkbox => checkbox === this);
+    
+  //   for (let i = 0; i < 9; i++) {
+  //     if (i !== currentIndex && checkboxes[i].checked) {
+  //       checkedIndex = i;
+  //     }
+  //   }
+
+  //   if (!checkedIndex) return;
+
+  //   let start = (checkedIndex > currentIndex) ? currentIndex : checkedIndex
+  //     , end = (start === checkedIndex) ? currentIndex : checkedIndex;
+  
+  //   for (let j = start; j <= end; j++) {
+  //     checkboxes[j].checked = true;
+  //   }
+  // }
+
 </script>
 </body>
 </html>
