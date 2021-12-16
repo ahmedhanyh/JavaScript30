@@ -7,6 +7,15 @@
 </head>
 <body>
 <script>
+  let pressed = '';
+  window.addEventListener('keyup', e => {
+    pressed += e.key;
+    if (pressed.includes('wesbos')) {
+      console.log('DING DING!');
+      cornify_add();
+      pressed = '';
+    }
+  })
 </script>
 </body>
 </html>
